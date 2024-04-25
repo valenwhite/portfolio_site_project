@@ -24,6 +24,10 @@ const Profile = () => (
     </Link>
     <h4>Valen White</h4>
     <h6>Web Developer</h6>
+    <div className={styles.onlineIndicator}>
+      <div className={styles.circle}></div> {/* Add this line */}
+      <p>Online Now</p>
+    </div>
   </div>
 );
 

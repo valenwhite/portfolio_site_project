@@ -3,7 +3,7 @@
 nav {
     z-index: 3;
     position: fixed;
-    width: 400px;
+    width: 250px;
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -54,14 +54,44 @@ nav {
         font-weight: 600;
         font-style: normal;
         margin-left: 5px;
-        letter-spacing: 5px;
+        letter-spacing: 4px;
         color: rgb(145, 145, 145)
     }
 }
 
+.onlineIndicator {
+    margin-top: 5px;
+    background-color: rgb(47, 47, 47);
+    width: fit-content; /* Set width to fit the contents */
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+
+    p {
+        color: rgb(133, 133, 133);
+        font-family: "Montserrat", sans-serif;
+        font-weight: 600;
+        font-size: 13px;
+        margin: 0 12px 0 0;
+    }
+}
+
+.circle {
+    width: 10px;
+    height: 10px;
+    background-color: green;
+    margin: 0 10px 0 7px;
+    border-radius: 50%;
+}
+
 .profilePicture {
-    width: 150px;
-    height: 150px;
+    width: 120px;
+    height: 120px;
     border-radius: 50%;
     object-fit: cover;
     margin-bottom: 25px;
@@ -75,11 +105,10 @@ nav {
 
 .navItem {
     transition: all 0.3s ease-out;
-    letter-spacing: 3px;
+    letter-spacing: 2px;
 
     &:hover {
-        color: rgb(74, 144, 249);
-        letter-spacing: 4px;
+        text-decoration: underline;
         weight: bold;
     } 
 }

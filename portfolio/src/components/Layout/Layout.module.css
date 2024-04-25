@@ -1,0 +1,8 @@
+.mainContainter {
+    margin-left: 250px;
+    z-index: 1;
+    /* opacity: 0; */
+    transform-style: preserve-3d;
+    animation: fadeIn 1s forwards;
+    animation-delay: 1s;
+}

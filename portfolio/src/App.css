@@ -30,7 +30,3 @@ a:active {
 }
 
 /* --- Main display area margin requirement due to sidebar Nav --- */
-.main {
-    margin-left: 250px;
-    positon: absolute;
-}

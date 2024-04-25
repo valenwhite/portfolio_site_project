@@ -34,9 +34,9 @@ const Profile = () => (
 
 // Used to Generate each of the menu items from below
 const NavItem = ({ icon, link, children }) => (
-  <li className={styles.navItem}>
+  <li>
     <FontAwesomeIcon className={styles.icon} icon={icon} />
-    <NavLink to={link}>{children}</NavLink>
+    <NavLink className={styles.navItem} to={link}>{children}</NavLink>
   </li>
 );
 

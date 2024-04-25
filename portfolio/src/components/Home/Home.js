@@ -1,5 +1,6 @@
 import styles from './Home.module.css';
 import { ReactTyped } from 'react-typed';
+
 // Profile Pictre Import
 import ProfilePicture from '../../img/me.png';
 
@@ -19,7 +20,7 @@ export const Home = () => {
                         backDelay={1000}
                 />
             </div>
-            <button className={`main-button ${styles.heroButton}`}>Let's Talk</button>
+            <button className={`primary-button ${styles.heroButton}`}>Let's Talk</button>
             <img src={ProfilePicture} alt="portoflio owner" className={styles.heroImage}></img>
         </div>
     );

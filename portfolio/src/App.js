@@ -1,16 +1,22 @@
 import './App.css';
-import { Layout } from './components/Layout/Layout';
+import { SideBar } from './components/SideBar/SideBar';
 import { Home } from './components/Home/Home';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { About } from './components/About/About';
+import { Routes, Route } from 'react-router-dom';
 
 function App() {
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Layout />} />
-        <Route path="/home" element={<Home />} />
-      </Routes>
-    </Router>
+    <div className="App">
+      <div class='menuContainer'>
+        <SideBar />
+      </div>
+      <div class='mainContainter'>
+        <Routes>
+          <Route path="/home" element={<Home />} />
+          <Route path="/about" element={<About />} />
+        </Routes>
+      </div>
+    </div>
   );
 }
 

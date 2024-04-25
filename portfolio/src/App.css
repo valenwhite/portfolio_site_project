@@ -6,9 +6,31 @@
 @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 
+/* --- Site Structure Containers -------------------------------- */
 
+.App {
+    display: flex;
+}
 
-/* --- Site Wide Styling Rules --- */
+.menuContainer {
+    width: 250px;
+}
+
+.mainContainter {
+    padding-top: 100px;
+    height: 100vh;
+    box-sizing: border-box;
+    z-index: 1;
+    width: 85%;
+    margin: 0 auto;
+    /* opacity: 0; */
+    transform-style: preserve-3d;
+    animation: fadeIn 1s forwards;
+    animation-delay: 1s;
+}
+
+/* --- Site Wide Styling Rules 
+-------------------------------- */
 
 body {
     margin: 0;
@@ -22,7 +44,8 @@ body {
     overscroll-behavior-y: none;
 }
 
-/* --- remove all Link styling --- */
+/* --- remove all Link styling 
+-------------------------------- */
 a:link,
 a:visited,
 a:hover,
@@ -31,11 +54,9 @@ a:active {
     color: inherit;
 }
 
-.App {
-    display: flex;
-}
-
-.main-button {
+/* --- Global Button Styling, Primary Button 
+-------------------------------- */
+.primary-button {
     width: fit-content;
     height:50px;
     border-radius: 25px;

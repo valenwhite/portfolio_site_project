@@ -1,7 +1,7 @@
 import React from 'react';
 
 //Router
-import {NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 //Icons
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';

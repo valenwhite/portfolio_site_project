@@ -8,7 +8,7 @@ nav {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #0e0e0e;
+    background-color: #000000;
     padding-top: 10rem;
 
     ul {
@@ -53,8 +53,8 @@ nav {
         font-family: "Montserrat", sans-serif;
         font-weight: 600;
         font-style: normal;
-        margin-left: 5px;
-        letter-spacing: 4px;
+        margin-left: 2px;
+        letter-spacing: 1.6px;
         color: rgb(145, 145, 145)
     }
 }
@@ -84,10 +84,15 @@ nav {
 .circle {
     width: 10px;
     height: 10px;
-    background-color: green;
+    background-color: rgb(30, 240, 30);
     margin: 0 10px 0 7px;
     border-radius: 50%;
+    box-shadow: 0px 0px 5px 3px rgb(5, 167, 5);
+    -webkit-animation: glow 1s ease-in-out infinite alternate;
+    -moz-animation: glow 1s ease-in-out infinite alternate;
+    animation: glow 1s ease-in-out infinite alternate;
 }
+
 
 .profilePicture {
     width: 120px;

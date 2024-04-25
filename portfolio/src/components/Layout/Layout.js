@@ -1,6 +1,7 @@
 import styles from './Layout.module.css';
 import { SideBar } from '../SideBar/SideBar';
 import { Home } from '../Home/Home';
+import { Footer } from '../Footer/Footer';
 
 
 export const Layout = () => {
@@ -11,6 +12,7 @@ export const Layout = () => {
             </div>
             <div className={styles.mainContainter}>
                 <Home />
+                <br />
             </div>
         </div>
     )

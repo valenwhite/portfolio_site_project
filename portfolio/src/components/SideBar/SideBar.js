@@ -23,7 +23,7 @@ const Profile = () => (
       <img className={styles.profilePicture} src={ProfilePicture} alt="Home" />
     </Link>
     <h4>Valen White</h4>
-    <h6>Web Developer</h6>
+    <h6>Digital All Rounder</h6>
     <div className={styles.onlineIndicator}>
       <div className={styles.circle}></div> {/* Add this line */}
       <p>Online Now</p>

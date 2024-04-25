@@ -31,9 +31,9 @@
 
 /* --- Site Wide Styling Rules 
 -------------------------------- */
-
 body {
     margin: 0;
+    padding: 0;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     background-image: radial-gradient(circle at 1px 1px, black 1px, transparent 0);

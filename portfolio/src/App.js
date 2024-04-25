@@ -4,7 +4,7 @@ import { Home } from './components/Home/Home';
 import { About } from './components/About/About';
 import { Routes, Route } from 'react-router-dom';
 
-function App() {
+export function App() {
   return (
     <div className="App">
       <div class='menuContainer'>
@@ -12,6 +12,7 @@ function App() {
       </div>
       <div class='mainContainter'>
         <Routes>
+          <Route exact path="/" element={<Home />} />
           <Route path="/home" element={<Home />} />
           <Route path="/about" element={<About />} />
         </Routes>
@@ -19,5 +20,3 @@ function App() {
     </div>
   );
 }
-
-export default App;

@@ -20,12 +20,12 @@ import ProfilePicture from '../../img/me.png';
 const Profile = () => (
   <div className={styles.profile}>
     <Link to="/home">
-      <img className={styles.profilePicture} src={ProfilePicture} alt="Home" />
+      <img src={ProfilePicture} alt="Home" />
     </Link>
-    <h4>Valen White</h4>
-    <h6>Digital All Rounder</h6>
+    <h3>Valen White</h3>
+    <h5>Digital All Rounder</h5>
     <div className={styles.onlineIndicator}>
-      <div className={styles.circle}></div> {/* Add this line */}
+      <div className={styles.circle}></div>
       <p>Online Now</p>
     </div>
   </div>

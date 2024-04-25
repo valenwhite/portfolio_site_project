@@ -41,20 +41,28 @@ nav {
     flex-direction: column;
     align-items: center;
 
-    h4 {
-            line-height: 0.4;
-            font-family: "Archivo Black", sans-serif;
-            font-weight: 400;
-            font-style: normal;
-            text-transform: uppercase;
+    img {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-bottom: 15px;
     }
 
-    h6 {
+    h3 {  
+        font-family: "Archivo Black", sans-serif;
+        font-size: 23px;
+        margin: 0;
+        font-weight: 400;
+        text-transform: uppercase;
+    }
+
+    h5 {
         font-family: "Montserrat", sans-serif;
+        margin: 0 0 10px 0;
         font-weight: 600;
-        font-style: normal;
-        margin-left: 2px;
-        letter-spacing: 1.6px;
+        margin-left: 1px;
+        letter-spacing: 2.6px;
         color: rgb(145, 145, 145)
     }
 }
@@ -79,27 +87,18 @@ nav {
         font-size: 13px;
         margin: 0 12px 0 0;
     }
-}
 
-.circle {
-    width: 10px;
-    height: 10px;
-    background-color: rgb(30, 240, 30);
-    margin: 0 10px 0 7px;
-    border-radius: 50%;
-    box-shadow: 0px 0px 5px 3px rgb(5, 167, 5);
-    -webkit-animation: glow 1s ease-in-out infinite alternate;
-    -moz-animation: glow 1s ease-in-out infinite alternate;
-    animation: glow 1s ease-in-out infinite alternate;
-}
-
-
-.profilePicture {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-bottom: 25px;
+    .circle {
+        width: 10px;
+        height: 10px;
+        background-color: rgb(30, 240, 30);
+        margin: 0 10px 0 7px;
+        border-radius: 50%;
+        box-shadow: 0px 0px 5px 3px rgb(5, 167, 5);
+        -webkit-animation: glow 1s ease-in-out infinite alternate;
+        -moz-animation: glow 1s ease-in-out infinite alternate;
+        animation: glow 1s ease-in-out infinite alternate;
+    }
 }
 
 .icon {

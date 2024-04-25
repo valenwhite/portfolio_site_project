@@ -5,6 +5,7 @@
 
 
 /* --- Site Wide Styling Rules --- */
+
 body {
     margin: 0;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -29,4 +30,6 @@ a:active {
     color: inherit;
 }
 
-/* --- Main display area margin requirement due to sidebar Nav --- */
+.App {
+    display: flex;
+}

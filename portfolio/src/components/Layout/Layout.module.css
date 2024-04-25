@@ -1,6 +1,12 @@
+.menuContainer {
+    width: 250px;
+}
+
 .mainContainter {
-    margin-left: 250px;
+    padding-top: 100px;
     z-index: 1;
+    width: 85%;
+    margin: 0 auto;
     /* opacity: 0; */
     transform-style: preserve-3d;
     animation: fadeIn 1s forwards;

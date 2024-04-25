@@ -6,7 +6,9 @@ import { Home } from '../Home/Home';
 export const Layout = () => {
     return (
         <div className="App">
-            <SideBar />
+            <div className={styles.menuContainer}>
+                <SideBar />
+            </div>
             <div className={styles.mainContainter}>
                 <Home />
             </div>

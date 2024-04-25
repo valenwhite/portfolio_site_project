@@ -1,7 +1,7 @@
 import React from 'react';
 
 //Router
-import { BrowserRouter as Router, NavLink } from 'react-router-dom';
+import {NavLink } from 'react-router-dom';
 
 //Icons
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -11,12 +11,16 @@ import { faAt, faDatabase, faFile, faBoxArchive} from '@fortawesome/free-solid-s
 import styles from './SideBar.module.css'; 
 import { Link } from 'react-router-dom';
 
+// Profile Pictre Import
+import ProfilePicture from '../../img/me.png';
 
-// Displays profile of the users portfolio
+
+// Displays profile picture and basic information of portfolio owner
+// To chnage the picture, replace the ProfilePicture import with the new image saved to the img folder located in the src folder
 const Profile = () => (
   <div className={styles.profile}>
     <Link to="/home">
-      <img className={styles.profilepicture} src="me.png" alt="Home" />
+      <img className={styles.profilePicture} src={ProfilePicture} alt="Home" />
     </Link>
     <h4>Valen White</h4>
     <h6>Web Developer</h6>
@@ -33,11 +37,10 @@ const NavItem = ({ icon, link, children }) => (
 );
 
 
-// Collection of all the menu items listed in App
+// Collection of all the menu items/pages within the portfolio App
 // To add a new page input the details using the NavItem format below
 export const SideBar = () => (
-  <Router>
-    <nav className={styles.sidebar}>
+    <nav>
       <Profile />
       <ul>
         <NavItem icon={faAt} link="/about">About</NavItem>
@@ -46,5 +49,4 @@ export const SideBar = () => (
         <NavItem icon={faBoxArchive} link="/contact">Contact</NavItem>
       </ul>
     </nav>
-  </Router>
 );

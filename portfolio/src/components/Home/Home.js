@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './Home.module.css';
-import '../index.css'; // Import the style sheet from the parent folder
+import '../../App.css'; // Import the style sheet from the parent folder
 
 
 export const Home = () => {

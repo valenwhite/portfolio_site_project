@@ -1,22 +1,23 @@
 import React from 'react';
 
-//Router
-import { NavLink } from 'react-router-dom';
+//Router Components
+import { NavLink, Link } from 'react-router-dom';
 
-//Icons
+//Icon Imports
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAt, faDatabase, faFile, faBoxArchive} from '@fortawesome/free-solid-svg-icons';
 
-// CCS
+// CCS Import
 import styles from './SideBar.module.css'; 
-import { Link } from 'react-router-dom';
 
 // Profile Pictre Import
 import ProfilePicture from '../../img/me.png';
 
 
+// SIDERBAR PROFILE
+// ----------------
 // Displays profile picture and basic information of portfolio owner
-// To chnage the picture, replace the ProfilePicture import with the new image saved to the img folder located in the src folder
+// To change the picture, replace the ProfilePicture import with the new image saved to the img folder located in the src folder
 const Profile = () => (
   <div className={styles.profile}>
     <Link to="/home">
@@ -31,26 +32,36 @@ const Profile = () => (
   </div>
 );
 
+// SIDEBAR NAVIGATION LINKS
+// ------------------------
+// Add items to the portfolio Nav by adding a new object to the navItems array below
 
-// Used to Generate each of the menu items from below
+const navItems = [
+  { icon: faAt, link: "/about", name: "About" },
+  { icon: faDatabase, link: "/projects", name: "Projects" },
+  { icon: faFile, link: "/resume", name: "Resume" },
+  { icon: faBoxArchive, link: "/contact", name: "Contact" },
+];
+
+// Generates the link for each of the menu items stored in the navItems array
 const NavItem = ({ icon, link, children }) => (
   <li>
     <FontAwesomeIcon className={styles.icon} icon={icon} />
-    <NavLink className={styles.navItem} to={link}>{children}</NavLink>
+    <NavLink exact className={styles.navItem} activeClassName={styles.activeNavItem} to={link}>{children}</NavLink>
   </li>
 );
 
-
-// Collection of all the menu items/pages within the portfolio App
-// To add a new page input the details using the NavItem format below
+// Displays the profile and generated navigation links created using the array and constructor above
 export const SideBar = () => (
-    <nav>
-      <Profile />
-      <ul>
-        <NavItem icon={faAt} link="/about">About</NavItem>
-        <NavItem icon={faDatabase} link="/projects">Projects</NavItem>
-        <NavItem icon={faFile} link="/resume">Resume</NavItem>
-        <NavItem icon={faBoxArchive} link="/contact">Contact</NavItem>
-      </ul>
-    </nav>
+  <nav>
+    <Profile />
+    <ul>
+      {navItems.map((item) => (
+        <NavItem 
+          key={item.link} 
+          icon={item.icon} 
+          link={item.link}>{item.name}</NavItem>
+      ))}
+    </ul>
+  </nav>
 );

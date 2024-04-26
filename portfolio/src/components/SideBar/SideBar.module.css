@@ -1,5 +1,5 @@
 /* Sidebar Navigation Styling */
-
+/* ========================== */
 nav {
     z-index: 3;
     position: fixed;
@@ -34,6 +34,28 @@ nav {
     }
 }
 
+.icon {
+    margin-right: 10px;
+    width: 20px;
+    color: rgb(145, 145, 145)
+}
+
+.navItem {
+    transition: all 0.3s ease-out;
+    letter-spacing: 2px;
+
+    &:hover {
+        margin-left: 3px;
+    }
+}
+
+.navItemActive {
+    color: red;
+    font-size: 4rem;
+}
+
+/* Sidebar Profile Styling */
+/* ======================= */
 .profile {
     color: white;
     margin-bottom: 5rem;
@@ -58,7 +80,6 @@ nav {
     }
 
     h5 {
-        font-family: "Montserrat", sans-serif;
         margin: 0 0 10px 0;
         font-weight: 600;
         margin-left: 1px;
@@ -99,19 +120,4 @@ nav {
         -moz-animation: glow 1s ease-in-out infinite alternate;
         animation: glow 1s ease-in-out infinite alternate;
     }
-}
-
-.icon {
-    margin-right: 10px;
-    width: 20px;
-    color:rgb(145, 145, 145)
-}
-
-.navItem {
-    transition: all 0.3s ease-out;
-    letter-spacing: 2px;
-
-    &:hover {
-        margin-left: 3px;
-    } 
 }

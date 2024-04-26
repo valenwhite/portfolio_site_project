@@ -6,8 +6,8 @@ import ProfilePicture from '../../img/me.png';
 
 export const Home = () => {
     return (
-        <div className={styles.home}>
-            <div className={styles.hero}>
+        <div className='centerContainer'>
+            <div>
                 <h1 className={styles.introText}> Hello, I'm Valen White</h1>
                 <ReactTyped className={styles.typedText}
                     strings={[

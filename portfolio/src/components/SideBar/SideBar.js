@@ -1,36 +1,18 @@
-import React from 'react';
+import { React } from 'react';
 
 //Router Components
-import { NavLink, Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
+
+// Import Profile
+import { Profile } from '../Profile/Profile';
+
+// CCS Import
+import styles from './SideBar.module.css'; 
 
 //Icon Imports
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAt, faDatabase, faFile, faBoxArchive} from '@fortawesome/free-solid-svg-icons';
 
-// CCS Import
-import styles from './SideBar.module.css'; 
-
-// Profile Pictre Import
-import ProfilePicture from '../../img/me.png';
-
-
-// SIDERBAR PROFILE
-// ----------------
-// Displays profile picture and basic information of portfolio owner
-// To change the picture, replace the ProfilePicture import with the new image saved to the img folder located in the src folder
-const Profile = () => (
-  <div className={styles.profile}>
-    <Link to="/home">
-      <img src={ProfilePicture} alt="Home" />
-    </Link>
-    <h3>Valen White</h3>
-    <h5>Digital All Rounder</h5>
-    <div className={styles.onlineIndicator}>
-      <div className={styles.circle}></div>
-      <p>Online Now</p>
-    </div>
-  </div>
-);
 
 // SIDEBAR NAVIGATION LINKS
 // ------------------------
@@ -47,7 +29,7 @@ const navItems = [
 const NavItem = ({ icon, link, children }) => (
   <li>
     <FontAwesomeIcon className={styles.icon} icon={icon} />
-    <NavLink exact className={styles.navItem} activeClassName={styles.activeNavItem} to={link}>{children}</NavLink>
+    <NavLink className={styles.navItem} to={link}>{children}</NavLink>
   </li>
 );
 

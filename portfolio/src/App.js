@@ -8,10 +8,10 @@ import { Routes, Route } from 'react-router-dom';
 export function App() {
   return (
     <div className="App">
-      <div class='menuContainer'>
+      <div className='menuContainer'>
         <SideBar />
       </div>
-      <div class='mainContainter'>
+      <div className='mainContainter'>
         <Routes>
           <Route exact path="/" element={<Home />} />
           <Route path="/home" element={<Home />} />

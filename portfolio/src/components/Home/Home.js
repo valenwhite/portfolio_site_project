@@ -8,7 +8,7 @@ export const Home = () => {
     return (
         <div className='centerContainer'>
             <div>
-                <h1 className={styles.introText}> Hello, I'm Valen White</h1>
+                <h1 className={styles.introText}><span className={styles.wave} role="img" aria-label="waving">👋</span> Hello, I'm Valen</h1>
                 <ReactTyped className={styles.typedText}
                     strings={[
                         "UX Designer.",

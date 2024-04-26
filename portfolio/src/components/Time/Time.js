@@ -1,6 +1,4 @@
 import { tailChase } from 'ldrs';
-import { useGoogleGeocoding } from '../APIs/GoogleGeocode';
-import { useTimezone } from '../APIs/TimeZoneDB';
 
 
 tailChase.register();

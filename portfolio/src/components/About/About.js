@@ -19,7 +19,7 @@ export const About = ()=> {
 
     return (
         <div className='centerContainer'>
-            <h1 className='header'>A little more about me</h1>
+            <h1 className='header'>./about me</h1>
             <div className={styles.gridContainer}>
                 <div className={`${styles.gridItem} ${styles.box1}`}>
                     <img className={styles.gridImage} src={unSplashIMG} alt=''></img>
@@ -37,7 +37,7 @@ export const About = ()=> {
 
                 <div className={`${styles.gridItem} ${styles.box4}`}>
                     <p>As a junior web developer with a background in UX/UI and financial services, I bring a unique blend of design and analytical thinking to my work. Drawing from experience in the UX space, as well as my newfound coding skills, I'm excited about building creative and intuitive front end web solutions that have impact. <br/><br/>
-                    Let's collaborate and create something special together.</p>
+                    Let's build something special, together.</p>
                     
                 </div>
 
@@ -46,9 +46,7 @@ export const About = ()=> {
                     <h4>Where I live</h4>
                 </div>
 
-                <div className={styles.box6}>
-                    <h2>🤞</h2>
-                </div>
+  
            
             </div>
 

@@ -64,9 +64,9 @@ export const Projects = () => {
 
     return (
         <div className='centerContainer'>
-            <h2>GitHub Projects</h2>
+            <h1 className='header'>./github projects</h1>
             <GridBuilder site={GitHub} onCardClick={handleCardClick} />
-            <h2>Figma Projects</h2>
+            <h1 className='header'>./figma projects</h1>
             <GridBuilder site={Figma} onCardClick={handleCardClick} />
 
             {selectedProject && (

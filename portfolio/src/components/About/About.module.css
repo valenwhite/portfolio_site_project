@@ -35,6 +35,7 @@
 
     p {
         line-height: 30px;
+        font-size: 18px;
     }
 }
 
@@ -104,6 +105,6 @@
         text-align: right;
         font-size: 100px;
         transform: rotate(10deg);
-        translate: -45px -150px;
+        translate: -30px -80px;
     }
 }

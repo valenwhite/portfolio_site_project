@@ -1,16 +1,17 @@
 .homeContainer {
-    margin-top: 200px;
+    margin-top: 220px;
 }
 
 .introText {
-    font-size: 3rem;
+    font-size: 3.5rem;
     font-weight: 600;
-    line-height: 3rem;
+    line-height: 4rem;
+    animation: backwards fadeIn 1s;
 }
 
 .typedText {
     font-family: 'Montserrat', sans-serif;
-    font-size: 4rem;
+    font-size: 4.5rem;
     font-weight: 800;
     background: -webkit-linear-gradient(45deg, #0091ff, #e787ff);
     -webkit-background-clip: text;
@@ -18,7 +19,7 @@
 }
 
 .buttonsOnHome {
-    margin-top: 30px;
+    margin-top: 25px;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -26,7 +27,7 @@
 }
 
 .heroButton {
-    animation: backwards FadeIn 1s;
+    animation: backwards fadeIn 2s 1s;
 }
 
 .heroButton:hover {
@@ -38,7 +39,7 @@
 @keyframes fadeIn {
     0% {
         opacity: 0;
-        translate-y: 20px
+        translate-y: 30px
     }
 
     100% {
@@ -48,12 +49,13 @@
 }
 
 .heroImage {
-    width: 700px;
+    width: 570px;
     position: fixed;
     bottom: 0;
     right: 0;
     margin: 0;
     padding: 0;
+    animation: fadeIn backwards 1s 1s;
 }
 
 .wave {

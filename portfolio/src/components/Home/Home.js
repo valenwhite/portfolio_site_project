@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 
 // Profile Pictre Import
-import ProfilePicture from '../../img/me.png';
+import heroImage from '../../img/heroImage.png';
 
 export const Home = () => {
     return (
@@ -24,15 +24,15 @@ export const Home = () => {
                     />
 
                     <div className={styles.buttonsOnHome}>
-                        <Link to="/contact">
-                            <button className={`primary-button ${styles.heroButton}`}>Let's Chat</button>
-                        </Link>
                         <Link to="/projects" >
-                            <button className={`primary-button`}>Projects</button>
+                            <button className={`primary-button ${styles.heroButton}`}>My Projects</button>
+                        </Link>
+                        <Link to="/about">
+                            <button className={`primary-button ${styles.heroButton}`}>About Me</button>
                         </Link>
                     </div>
 
-                     <img src={ProfilePicture} alt="portoflio owner" className={styles.heroImage}></img>
+                     <img src={heroImage} alt="portoflio owner" className={styles.heroImage}></img>
 
                 </div>
             </div>    

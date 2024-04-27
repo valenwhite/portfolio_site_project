@@ -1,43 +1,41 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styles from './Projects.module.css';
 import photo from '../../img/test.png';
+import { useGitHubRepos } from '../APIs/GitHub';
 
-const GitHub = [
-    { image: photo, title: 'Project 1', description: 'Description 1' },
-    { image: photo, title: 'Project 2', description: 'Description 2' },
-    { image: photo, title: 'Project 3', description: 'Description 3' },
-    { image: photo, title: 'Project 4', description: 'Description 4' },
-    { image: photo, title: 'Project 5', description: 'Description 5' },
-    { image: photo, title: 'Project 6', description: 'Description 6' }
-];
+//Loader Import
+import { tailChase } from 'ldrs';
+tailChase.register();
+
+export const gitHubUserName = 'valenwhite';
 
 const Figma = [
-    { image: photo, title: 'Project 1', description: 'Description 1' },
-    { image: photo, title: 'Project 2', description: 'Description 2' },
-    { image: photo, title: 'Project 3', description: 'Description 3' },
-    { image: photo, title: 'Project 4', description: 'Description 4' },
-    { image: photo, title: 'Project 5', description: 'Description 5' },
-    { image: photo, title: 'Project 6', description: 'Description 6' }
+    { image: photo, name: 'Project 1', description: 'Description 1' },
+    { image: photo, name: 'Project 2', description: 'Description 2' },
+    { image: photo, name: 'Project 3', description: 'Description 3' },
+    { image: photo, name: 'Project 4', description: 'Description 4' },
+    { image: photo, name: 'Project 5', description: 'Description 5' },
+    { image: photo, name: 'Project 6', description: 'Description 6' }
 ];
 
-const Card = ({ image, title, description, onClick }) => {
+const Card = ({ image, name, description, onClick }) => {
     return (
         <div className={styles.card} onClick={onClick}>
             <img src={image} alt='project' />
-            <h3>{title}</h3>
+            <h3>{name}</h3>
             <p>{description}</p>
         </div>
     )
 }
 
-export const GridBuilder = ({site, onCardClick}) => {
+export const GridBuilder = ({projects, onCardClick}) => {
     return (
         <div className={styles.gridContainer}>
-            {site.map((item, index) => (
+            {projects.map((item, index) => (
                 <Card
                     key={index}
                     image={item.image}
-                    title={item.title}
+                    name={item.name}
                     description={item.description}
                     onClick={() => onCardClick(item)}
                 />
@@ -50,6 +48,18 @@ export const Projects = () => {
     
     const [selectedProject, setSelectedProject] = useState(null);
     const [modalTop, setModalTop] = useState(0);
+
+    const {loading, repos, error } = useGitHubRepos(gitHubUserName);
+
+    if (loading) {
+        return <l-tail-chase size="40" speed="1.75" color="white" ></l-tail-chase>;
+    }
+
+    if (error) {
+        return <h4>Error</h4>;
+    }
+
+    console.log(repos);
 
     const handleCardClick = (project) => {
         setSelectedProject(project);
@@ -65,14 +75,14 @@ export const Projects = () => {
     return (
         <div className='centerContainer'>
             <h1 className='header'>./github projects</h1>
-            <GridBuilder site={GitHub} onCardClick={handleCardClick} />
+            <GridBuilder projects={repos} onCardClick={handleCardClick} />
             <h1 className='header'>./figma projects</h1>
-            <GridBuilder site={Figma} onCardClick={handleCardClick} />
+            <GridBuilder projects={Figma} onCardClick={handleCardClick} />
 
             {selectedProject && (
                 <div className={styles.modal} style={{ top: modalTop }}>
                     <div className={styles.modalContent}>
-                        <h3>{selectedProject.title}</h3>
+                        <h3>{selectedProject.name}</h3>
                         <img src={selectedProject.image} alt='project' />
                         <p>{selectedProject.description}</p>
                         <button onClick={handleClose}>Close</button>

@@ -8,7 +8,7 @@ export function useGoogleGeocoding (location) {
     useEffect(() => {
 
         async function getGeocoding() {
-            const url = `https://maps.googleapis.com/maps/api/geocode/json?address=${(location.location)}&key=AIzaSyDeY10IEkOSPhDLIf55unEDCOcAYyTsKVQ`;
+            const url = `https://maps.googleapis.com/maps/api/geocode/json?address=${(location.location)}&key=`;
    
             try {
                 let res = await fetch(url);

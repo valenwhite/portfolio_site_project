@@ -1,7 +1,11 @@
+.homeContainer {
+    margin-top: 200px;
+}
+
 .introText {
     font-size: 3rem;
     font-weight: 600;
-    line-height: 0.8rem;
+    line-height: 3rem;
 }
 
 .typedText {
@@ -13,10 +17,23 @@
     -webkit-text-fill-color: transparent;
 }
 
-.heroButton {
-    animation: fadeIn 1.5s 8s backwards;
-    margin-top: 10px;
+.buttonsOnHome {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
 }
+
+.heroButton {
+    animation: backwards FadeIn 1s;
+}
+
+.heroButton:hover {
+    cursor: pointer;
+
+}
+
 
 @keyframes fadeIn {
     0% {

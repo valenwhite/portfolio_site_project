@@ -1,7 +1,7 @@
 import { React } from 'react';
 
 //Router Components
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 
 // Import Profile
 import { Profile } from '../Profile/Profile';
@@ -18,7 +18,7 @@ import { faAt, faDatabase, faFile, faBoxArchive} from '@fortawesome/free-solid-s
 // ------------------------
 // Add items to the portfolio Nav by adding a new object to the navItems array below
 
-const navItems = [
+export const navItems = [
   { icon: faAt, link: "/about", name: "About" },
   { icon: faDatabase, link: "/projects", name: "Projects" },
   { icon: faFile, link: "/resume", name: "Resume" },
@@ -26,7 +26,7 @@ const navItems = [
 ];
 
 // Generates the link for each of the menu items stored in the navItems array
-const NavItem = ({ icon, link, children }) => (
+export const NavItem = ({ icon, link, children }) => (
   <li>
     <FontAwesomeIcon className={styles.icon} icon={icon} />
     <NavLink className={styles.navItem} to={link}>{children}</NavLink>
@@ -34,16 +34,26 @@ const NavItem = ({ icon, link, children }) => (
 );
 
 // Displays the profile and generated navigation links created using the array and constructor above
-export const SideBar = () => (
-  <nav>
-    <Profile />
-    <ul>
-      {navItems.map((item) => (
-        <NavItem 
-          key={item.link} 
-          icon={item.icon} 
-          link={item.link}>{item.name}</NavItem>
-      ))}
-    </ul>
-  </nav>
-);
+const SideBar = () => {
+  const location = useLocation();
+
+  if (location.pathname === '/') {
+    return null;
+  }
+
+  return (
+    <nav>
+      <Profile />
+      <ul>
+        {navItems.map((item) => (
+          <NavItem 
+            key={item.link} 
+            icon={item.icon} 
+            link={item.link}>{item.name}</NavItem>
+        ))}
+      </ul>
+    </nav>
+  );
+};
+
+export default SideBar;

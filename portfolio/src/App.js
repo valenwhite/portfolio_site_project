@@ -1,5 +1,5 @@
 import './App.css';
-import { SideBar } from './components/SideBar/SideBar';
+import SideBar from './components/SideBar/SideBar';
 import { Home } from './components/Home/Home';
 import { About } from './components/About/About';
 import { Projects } from './components/Projects/Projects';

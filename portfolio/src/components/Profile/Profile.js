@@ -1,7 +1,6 @@
 import React from 'react';
 import { useGitHubProfile } from '../APIs/GitHub';
 import { Link } from 'react-router-dom';
-import { Time } from '../Time/Time';
 // CSS Import
 import styles from './Profile.module.css';
 
@@ -15,7 +14,7 @@ tailChase.register();
 // Displays profile picture and basic information of portfolio owner
 // To change the picture, replace the ProfilePicture import with the new image saved to the img folder located in the src folder
 
-const gitHubUserName = 'valenwhite';
+export const gitHubUserName = 'valenwhite';
 
 export const Profile = () => {
 
@@ -37,10 +36,9 @@ export const Profile = () => {
       </Link>
       <h3>{profile.name}</h3>
       <h5>{profile.location}</h5>
-      <Time location={profile.location}/>
       <div className={styles.onlineIndicator}>
         <div className={styles.circle}></div>
-        <p>Online Now</p>
+        <p>Available for Hire</p>
       </div>
     </div>
   );

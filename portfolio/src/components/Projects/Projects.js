@@ -1,7 +1,14 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import styles from './Projects.module.css';
-import photo from '../../img/test.png';
 import { useGitHubRepos } from '../APIs/GitHub';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faX} from '@fortawesome/free-solid-svg-icons';
+
+import project1 from '../../img/projects/project1.png';
+import project2 from '../../img/projects/project2.png';
+import project3 from '../../img/projects/project3.png';
+import project4 from '../../img/projects/project4.png';
+import project5 from '../../img/projects/project5.png';
 
 //Loader Import
 import { tailChase } from 'ldrs';
@@ -9,21 +16,22 @@ tailChase.register();
 
 export const gitHubUserName = 'valenwhite';
 
-const Figma = [
-    { image: photo, name: 'Project 1', description: 'Description 1' },
-    { image: photo, name: 'Project 2', description: 'Description 2' },
-    { image: photo, name: 'Project 3', description: 'Description 3' },
-    { image: photo, name: 'Project 4', description: 'Description 4' },
-    { image: photo, name: 'Project 5', description: 'Description 5' },
-    { image: photo, name: 'Project 6', description: 'Description 6' }
-];
 
-const Card = ({ image, name, description, onClick }) => {
+
+const images = [project1, project2, project3, project4, project5];
+
+const Card = ({ image, name, languages, onClick }) => {
     return (
         <div className={styles.card} onClick={onClick}>
             <img src={image} alt='project' />
             <h3>{name}</h3>
-            <p>{description}</p>
+            <div className={styles.languages}>
+                {Object.keys(languages).map((language, index) => (
+                    <h6 key={index} className={styles.language}>
+                        {language}
+                    </h6>
+                ))}
+            </div>
         </div>
     )
 }
@@ -31,12 +39,12 @@ const Card = ({ image, name, description, onClick }) => {
 export const GridBuilder = ({projects, onCardClick}) => {
     return (
         <div className={styles.gridContainer}>
-            {projects.map((item, index) => (
+            {[...projects].reverse().map((item, index) => (
                 <Card
                     key={index}
-                    image={item.image}
-                    name={item.name}
-                    description={item.description}
+                    image={images[index]}
+                    name={item.description}
+                    languages={item.languages}
                     onClick={() => onCardClick(item)}
                 />
             ))}
@@ -76,16 +84,24 @@ export const Projects = () => {
         <div className='centerContainer'>
             <h1 className='header'>./github projects</h1>
             <GridBuilder projects={repos} onCardClick={handleCardClick} />
-            <h1 className='header'>./figma projects</h1>
-            <GridBuilder projects={Figma} onCardClick={handleCardClick} />
 
             {selectedProject && (
                 <div className={styles.modal} style={{ top: modalTop }}>
                     <div className={styles.modalContent}>
-                        <h3>{selectedProject.name}</h3>
-                        <img src={selectedProject.image} alt='project' />
-                        <p>{selectedProject.description}</p>
-                        <button onClick={handleClose}>Close</button>
+                        <img src={project1} alt='project' />
+                        <div className={styles.popupDescription}>
+                            <div className={styles.header}>
+                                <button onClick={handleClose}><FontAwesomeIcon icon={faX} /></button>
+                            </div>
+                            <h3>{selectedProject.description}</h3>
+                            <div className={styles.languages}>
+                                {Object.keys(selectedProject.languages).map((language, index) => (
+                                    <h6 key={index} className={styles.language}>
+                                        {language}
+                                    </h6>
+                                ))}
+                            </div>
+                        </div>
                     </div>
                 </div>
             )}

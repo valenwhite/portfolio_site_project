@@ -1,0 +1,142 @@
+/* --- Contact Page Styling --- */
+/* ---------------------------- */
+
+
+/* --- Structe styling --- */
+/* ---------------------- */
+
+/* Seperates the map and form elemnts into grid */
+.formContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* Two equal-width columns */
+    grid-gap: 20px; 
+}
+
+/* Name and Email span one column */
+form label:nth-child(1),
+form label:nth-child(2) {
+    grid-column: span 1;
+}
+
+/* Message label and Submit button span two columns */
+form label:nth-child(3),
+form input[type="submit"] {
+    grid-column: span 2;
+}
+
+/* --- Form styling --- */
+/* -------------------- */
+
+/* Form containrer stying */
+form {
+    background-color: rgb(22, 22, 22);
+    width: 100%;
+    min-height: 400px;
+    max-height: 600px;
+    padding: 4%;
+    border-radius: 15px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 15px;
+    align-items: center;
+    justify-content: space-around;
+    box-sizing: border-box;
+}
+
+/* Thank you message post-submission styling */
+.thankYou {
+    color: white;
+    background-color: rgb(22, 22, 22);
+    text-align: center;
+    width: 100%;
+    min-height: 400px;
+    max-height: 600px;
+    padding: 4%;
+    border-radius: 15px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+/* Form input area styling */
+input, textarea {
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+textarea {
+    min-height: 200px;
+}
+
+input:focus, textarea:focus {
+    outline-color: #0091ff;
+
+}
+
+input[type="submit"] {
+    color: white;
+    justify-self: center;
+}
+
+label {
+    font-family: 'Monsterrat', sans-serif;
+    font-weight: 700;
+    color: white;
+}
+
+/* Error message styling */
+.error {
+    color: white;
+}
+
+/* --- Map styling --- */
+/* -------------------- */
+
+/* Layout */
+.map {
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    border: 5px solid black;
+    overflow: hidden;
+    box-sizing: border-box;
+    
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+
+/* Layout and styling for text under map */
+.mapText {
+    grid-column: 1 / span 1;
+    grid-row: 3;
+    background: none;
+    text-align: right;
+
+    /* Specific styling for h2 and h4 elements */
+    h2 {
+        font-size: 50px;
+        font-weight: 700;
+        background: -webkit-linear-gradient(45deg, #0091ff, #e787ff);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        margin-bottom: 0px;
+    }
+
+    h4 {
+        font-size: 30px;
+        font-weight: 700;
+        text-align: right;
+    }
+}

@@ -2,6 +2,9 @@
 import Job from './Job'; // Import the Job component from the Job.js file
 import styles from './Resume.module.css'; // Import the CSS styles
 
+import { Html5PlainWordmark, Css3PlainWordmark, JavascriptPlain, PythonPlainWordmark, CPlain } from 'devicons-react';
+
+
 // Define an array of job objects. Each object contains a title, description, and date.
 const jobs = [
     { title: 'StockCo', description: 'IT Delivery', date: 'Current' },
@@ -19,12 +22,12 @@ const schools = [
 // Define the School component. It receives three props: name, year, and degree
 const School = ({ name, year, degree }) => {
     return (
-        <div>
+        <div className={styles.schoolContainer}>
             <div className={styles.schoolHeader}>
                 <h1>{name}</h1>
-                <h2>{year}</h2>
+                <h2 className={styles.smaller}>{year}</h2>
             </div>
-            <h2>{degree}</h2>
+            <h2 className={styles.smaller}>{degree}</h2>
         </div>
     );
 };
@@ -52,13 +55,20 @@ export const Resume = () => {
                 
                 </div>
                 <div className={styles.box2}>
-                    <h1 className={styles.educationTitle}>Education</h1>
-                    <div className={styles.seperator}></div>
-                     <div>
+                    <h1 className={styles.title}>Education</h1>
+                    <div className={`${styles.seperator} ${styles.gradient}`}></div>
+                    <div>
                         {schools.map((school, index) => (
                             <School key={index} name={school.name} year={school.year} degree={school.degree} />
                         ))}
                     </div>
+                    <h1 className={`${styles.title} ${styles.buffer}`}>Programming Languages</h1>
+                    <div className={`${styles.seperator} ${styles.gradient}`}></div>
+                    <Html5PlainWordmark size={50}/>
+                    <Css3PlainWordmark size={50}/>
+                    <JavascriptPlain size={50}/>
+                    <PythonPlainWordmark size={50}/>
+                    <CPlain size={50}/>
                 </div>
             </div>
         </div>

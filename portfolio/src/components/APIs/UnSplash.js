@@ -1,33 +1,40 @@
+// Import useEffect and useState hooks from React
 import { useEffect, useState } from 'react';
 
-// const API_KEY = 'mKJpkBLe1kDR6YveYQ-pXLe0t6BR1eR3Soekzf5PZAg';
+// Define the Unsplash API key (removed wehn correctly depoyed)
+const API_KEY = 'mKJpkBLe1kDR6YveYQ-pXLe0t6BR1eR3Soekzf5PZAg';
 
+// API that fetches an image from Unsplash based on a search value. The vlaue is the GitHub User Location
 export function useUnSplashImage (searchValue) {
+    // Define the default state variables for the loading status, the image URL, and any error
     const [unSplashLoading, setUnSplashLoading] = useState(true);
     const [unSplashIMG, setUnSplashIMG] = useState();
     const [unSplashError, setUnSplashError] = useState(null);
 
+    // Use the useEffect hook to call getUnSplashImage whenever the searchValue changes
     useEffect(() => {
         getUnSplashImage(searchValue);
     }, [searchValue]);
 
-        const data = 'https://upload.wikimedia.org/wikipedia/commons/a/a8/TEIDE.JPG';
-
+    // Async function that fetches an image from Unsplash API ednpoint. Image will be ranodom based on the searchValue
     async function getUnSplashImage(searchValue) {
 
-//        const url = `ttps://api.unsplash.com/photos/random?client_id=${API_KEY}&query=${searchValue}&count=1`;
+        // The URL for the Unsplash API
+        const url = `ttps://api.unsplash.com/photos/random?client_id=${API_KEY}&query=${searchValue}&count=1`;
 
         try {
- 
-//            let res = await fetch(url);
-//            let data = await res.json();
+            // Fetch the data from the Unsplash API
+            let res = await fetch(url);
+            // Parse the JSON response
+            let data = await res.json();
 
-
-             if (data && data.length > 0) {
-//                setUnSplashIMG(data[0].links.download);
-                setUnSplashIMG(data);
+            // If the data array has at least one item, set the image URL state variable to the download link of the first item
+            if (data && data.length > 0) {
+                setUnSplashIMG(data[0].links.download);
+                
             }
 
+            // Set the loading status to false
             setUnSplashLoading(false);
 
         } catch (error) {
@@ -37,6 +44,7 @@ export function useUnSplashImage (searchValue) {
         }
     };
 
+    // Return the loading status, the image URL, and the error as an object
     return {
         unSplashLoading, 
         unSplashIMG,

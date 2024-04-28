@@ -94,19 +94,35 @@
     border-radius: 15px;
     position: sticky;
     top: 203px;
-    padding: 20px;
+    box-sizing: border-box;
+    padding: 40px;
 
     h1, h2 {
         color: white;
     }
 }
 
-.educationTitle {
-    margin-bottom: 40px;
+.title {
+    margin-bottom: 5px;
+}
+
+.schoolContainer {
+    margin-bottom: 20px;
 }
 .seperator {
-    height: 10px;
+    height: 8px;
+    border-radius: 20px;
+    margin-bottom: 20px;
     
+}
+
+.smaller {
+    font-size: 18px;
+
+}
+
+.buffer {
+    margin-top: 60px;
 }
 
 .schoolHeader {

@@ -1,0 +1,122 @@
+/* --- Reusme Page Styling --- */
+/* ---------------------------- */
+
+
+/* --- Page Structure styling --- */
+/* ------------------------------ */
+
+/* Page is arrnaged in a grid format containing two columns */
+.resumeContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+    
+}
+
+/* Prevents the right side of the page from scrolling */
+.preventScroll {
+    position: sticky;
+    top:100px;
+}
+
+/* --- Job History Section --- */
+/* --------------------------- */
+.box1 {
+    display: flex;
+    width: 100%;
+    height: 800px;
+}
+
+
+ 
+/* Center stalk of job history */
+.stalk {
+    width: 30px;
+    height: 130%;
+    border-radius: 20px 20px 0 0;
+    margin: 0 20px 0 20px;
+}
+
+/* Styling for the individaul job listings */
+.jobContainer {
+    background-color: rgb(22, 22, 22);
+    height: 200px;
+    border-radius: 15px;
+    margin-bottom: 150px;
+    padding: 10px 20px;
+
+    h2,
+    p {
+        color: white;
+        font-weight: 600;
+    }
+
+    p {
+        border-radius: 5px;
+        padding: 3px 4px;
+        margin-top: 3px
+    }
+    
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Styling specific for left side of the history tree */
+.leftContainer {
+    width: 100%;
+    border-radius: 15px;
+    padding-top: 50px;
+}
+
+/* Styling specific for right side of the history tree */
+.rightContainer {
+    width: 100%;
+    border-radius: 15px;
+    padding-top: 175px;
+}
+
+.right {
+    text-align: right;
+}
+
+
+
+/* --- Qaulification Section --- */
+/* --------------------------- */
+.box2 {
+    background-color: rgb(22, 22, 22);
+    width: 100%;
+    height: 500px;
+    border-radius: 15px;
+    position: sticky;
+    top: 203px;
+    padding: 20px;
+
+    h1, h2 {
+        color: white;
+    }
+}
+
+.educationTitle {
+    margin-bottom: 40px;
+}
+.seperator {
+    height: 10px;
+    
+}
+
+.schoolHeader {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* --- Misc --- */
+/* ------------ */
+
+.gradient {
+    background: -webkit-linear-gradient(45deg, #0091ff, #e787ff);
+}

@@ -1,5 +1,8 @@
 /* Sidebar Navigation Styling */
 /* ========================== */
+
+/* --- Navigation Styling --- */
+/* -------------------------- */
 nav {
     z-index: 3;
     position: fixed;
@@ -24,5 +27,26 @@ nav {
 
     &:hover {
         margin-left: 3px;
+    }
+}
+
+/* --- SideBar fade in animation --- */
+/* ----------------------------------*/
+
+.fadeIn {
+    animation: fadeIn backwards 1s;
+
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateX(-100%);
+        
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
     }
 }

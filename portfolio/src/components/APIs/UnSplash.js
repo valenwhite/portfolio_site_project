@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-const API_KEY = 'mKJpkBLe1kDR6YveYQ-pXLe0t6BR1eR3Soekzf5PZAg';
+// const API_KEY = 'mKJpkBLe1kDR6YveYQ-pXLe0t6BR1eR3Soekzf5PZAg';
 
 export function useUnSplashImage (searchValue) {
     const [unSplashLoading, setUnSplashLoading] = useState(true);
@@ -25,9 +25,7 @@ export function useUnSplashImage (searchValue) {
 
              if (data && data.length > 0) {
 //                setUnSplashIMG(data[0].links.download);
-                console.log("1");
                 setUnSplashIMG(data);
-                console.log(unSplashIMG);
             }
 
             setUnSplashLoading(false);

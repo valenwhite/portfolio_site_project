@@ -1,5 +1,9 @@
+/* ======================= */
 /* Sidebar Profile Styling */
 /* ======================= */
+
+/* Profile section container styling */
+/* --------------------------------- */
 .profile {
     color: white;
     margin-bottom: 5rem;
@@ -7,6 +11,7 @@
     flex-direction: column;
     align-items: center;
 
+    /* Profile image styling */
     img {
         width: 120px;
         height: 120px;
@@ -15,6 +20,7 @@
         margin-bottom: 15px;
     }
 
+    /* Profile name styling */
     h3 {
         font-family: "Archivo Black", sans-serif;
         color: white;
@@ -24,29 +30,28 @@
         text-transform: uppercase;
     }
 
+    /* Profile description styling */
     h5 {
         margin: 0 0 10px 0;
         font-weight: 600;
         margin-left: 1px;
         letter-spacing: 2.6px;
-        color: rgb(145, 145, 145)
+        color: rgb(145, 145, 145);
     }
 }
 
+/* Online indicator styling */
 .onlineIndicator {
     margin-top: 5px;
     background-color: rgb(47, 47, 47);
     width: fit-content;
-    /* Set width to fit the contents */
     height: 24px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border-top-left-radius: 20px;
-    border-bottom-left-radius: 20px;
-    border-top-right-radius: 20px;
-    border-bottom-right-radius: 20px;
+    border-radius: 20px;
 
+    /* Online indicator text styling */
     p {
         color: rgb(133, 133, 133);
         font-family: 'Montserrat', sans-serif;
@@ -55,6 +60,7 @@
         margin: 0 12px 0 0;
     }
 
+    /* Online indicator circle styling */
     .circle {
         width: 10px;
         height: 10px;
@@ -62,8 +68,6 @@
         margin: 0 10px 0 7px;
         border-radius: 50%;
         box-shadow: 0px 0px 5px 3px rgb(5, 167, 5);
-        -webkit-animation: glow 1s ease-in-out infinite alternate;
-        -moz-animation: glow 1s ease-in-out infinite alternate;
         animation: glow 1s ease-in-out infinite alternate;
     }
 }

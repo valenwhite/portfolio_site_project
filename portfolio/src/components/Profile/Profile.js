@@ -1,34 +1,28 @@
-import React from 'react';
-import { useGitHubProfile } from '../APIs/GitHub';
-import { Link } from 'react-router-dom';
-// CSS Import
-import styles from './Profile.module.css';
+// Importing dependencies
+import { useGitHubProfile } from '../APIs/GitHub'; // Importing custom hook to fetch GitHub profile
+import { Loading, Error } from '../Functional/Load'; // Importing Loading and Error components
+import { Link } from 'react-router-dom'; // Importing Link component for React routing
+import styles from './Profile.module.css'; // Importing CSS module for styling
 
-//Loader Import
-import { tailChase } from 'ldrs';
-tailChase.register();
-
-
-// PROFILE SECTION
-// ---------------
-// Displays profile picture and basic information of portfolio owner
-// To change the picture, replace the ProfilePicture import with the new image saved to the img folder located in the src folder
-
+// GitHub username for fetching profile. Add your username here if you would to auto update the portfolio
 export const gitHubUserName = 'valenwhite';
 
+// Displays the profile picture from GitHub and location
 export const Profile = () => {
 
-
+  // Fetching GitHub profile using custom hook
   const { loading, profile, error } = useGitHubProfile(gitHubUserName);
 
+  // If the profile is still loading, display the loader
   if (loading) {
-    return <l-tail-chase size="40" speed="1.75" color="white" ></l-tail-chase>;
+    return <Loading />
   }
-
+  // If there was an error fetching the profile, display an error message
   if (error) {
-    return <h4>Error</h4>;
+    return <Error />
   }
   
+  // If the profile was fetched successfully, display the profile
   return (  
     <div className={styles.profile}>
       <Link to="/home">
@@ -43,5 +37,3 @@ export const Profile = () => {
     </div>
   );
 };
-
-export default Profile;

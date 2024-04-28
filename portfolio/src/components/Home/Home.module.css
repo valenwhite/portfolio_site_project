@@ -1,41 +1,61 @@
+/* ================= */
+/* Home Page Styling */
+/* ================= */
+
+/* --- Layout --- */
+/* -------------- */
 .homeContainer {
     margin-top: 220px;
 }
 
+.buttonsOnHome {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    margin-top: 25px;
+}
+
+.heroImage {
+    animation: fadeIn backwards 1s 1s;
+    bottom: 0;
+    margin: 0;
+    padding: 0;
+    position: fixed;
+    right: 0;
+    width: 570px;
+}
+
+/* --- Typography --- */
+/* ------------------ */
 .introText {
+    animation: backwards fadeIn 1s;
     font-size: 3.5rem;
     font-weight: 600;
     line-height: 4rem;
-    animation: backwards fadeIn 1s;
 }
 
 .typedText {
+    background: -webkit-linear-gradient(45deg, #0091ff, #e787ff);
     font-family: 'Montserrat', sans-serif;
     font-size: 4.5rem;
     font-weight: 800;
-    background: -webkit-linear-gradient(45deg, #0091ff, #e787ff);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
-.buttonsOnHome {
-    margin-top: 25px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 20px;
-}
-
+/* --- Buttons --- */
+/* --------------- */
 .heroButton {
     animation: backwards fadeIn 2s 1s;
 }
 
 .heroButton:hover {
     cursor: pointer;
-
 }
 
-
+/* --- Animations --- */
+/* ------------------ */
 @keyframes fadeIn {
     0% {
         opacity: 0;
@@ -48,40 +68,21 @@
     }
 }
 
-.heroImage {
-    width: 570px;
-    position: fixed;
-    bottom: 0;
-    right: 0;
-    margin: 0;
-    padding: 0;
-    animation: fadeIn backwards 1s 1s;
-}
-
-.wave {
-    animation-name: wave-animation;
-    animation-duration: 3.5s;
-    animation-iteration-count: 1;
-    transform-origin: 70% 70%;
-    display: inline-block;
-}
-
 @keyframes wave-animation {
-    0% {
+
+    0%,
+    60%,
+    100% {
         transform: rotate(0.0deg)
     }
 
-    10% {
-        transform: rotate(14.0deg)
-    }
-
-    /* The following five values can be played with to make the waving more or less extreme */
-    20% {
-        transform: rotate(-8.0deg)
-    }
-
+    10%,
     30% {
         transform: rotate(14.0deg)
+    }
+
+    20% {
+        transform: rotate(-8.0deg)
     }
 
     40% {
@@ -91,13 +92,12 @@
     50% {
         transform: rotate(10.0deg)
     }
+}
 
-    60% {
-        transform: rotate(0.0deg)
-    }
-
-    /* Reset for the last half to pause */
-    100% {
-        transform: rotate(0.0deg)
-    }
+.wave {
+    animation-duration: 3.5s;
+    animation-iteration-count: 1;
+    animation-name: wave-animation;
+    display: inline-block;
+    transform-origin: 70% 70%;
 }

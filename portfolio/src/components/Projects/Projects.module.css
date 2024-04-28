@@ -1,20 +1,45 @@
+/* Projects Page Styling */
+/* ====================== */
+
+
+/* --- Grid layout ---*/
+/* ------------------ */
+.gridContainer {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin-bottom: 150px;
+}
+
+
+/* --- Project Card Styling ---*/
+/* --------------------------- */
 .card {
+    /* Flex is used for layout, elements stacked vertically */
     display: flex;
     flex-direction: column;
+    gap: 15px;
+
+    /* Box-sizing is set to border-box so padding and border are included in the element's total width and height */
     box-sizing: border-box;
+
+    /* Styling properties for the card's appearance */
     border-radius: 15px;
     padding: 5px;
     background-color: rgb(22, 22, 22);
     width: 100%;
     height: 400px;
-    gap:15px;
+
+    /* Transition for the transform property, for a smooth hover effect */
     transition: transform 0.2s ease;
 
+    /* On hover, the cursor changes and the card scales up slightly */
     &:hover {
         cursor: pointer;
         transform: scale(1.03);
     }
 
+    /* Styling for the image inside the card */
     img {
         align-self: center;
         width: 100%;
@@ -23,18 +48,21 @@
         object-fit: cover;
     }
 
+    /* Styling for the h3 and p elements inside the card */
     h3, p {
         padding-left: 10px;
         color: white;
     }
-
 }
 
+/* --- Programming languages styling ---*/
+/* ------------------------------------ */
 .languages {
     display: flex;
     padding-left: 10px;
     gap: 10px;
 
+    /* Styling properties for the tag's appearance */
     .language {
         border: 2px solid #4a4a4a;
         border-radius: 5px;
@@ -45,59 +73,63 @@
     }
 }
 
-.gridContainer {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 15px;
-    margin-bottom: 150px;
-}
+/* --- Custom modal popup styling ---*/
+/* --------------------------------- */
 
-h2 {
-    font-size: 3rem;
-    font-weight: 700;
-    margin-bottom: 10px;
-    text-align: right;
-}
-
-
+/* Layout and styling for the modal container */
 .modal {
+    /* Position the modal over the entire page */
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
+
+    /* Set the background color to a semi-transparent black */
     background-color: rgba(0, 0, 0, 0.6);
+
+    /* Flex is used for layout, with the modal content centered both vertically and horizontally */
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
+/* Used when the modal is visible */
 .modal.show {
     opacity: 1;
 }
 
+/* Styling for the modal popup  */
 .modalContent {
+    /* Flex is used for layout, with elements laid out horizontally */
     display: flex;
     box-sizing: border-box;
+
+    /* Styling properties for the modal appearance */
     border-radius: 20px;
     padding: 10px;
     background-color: rgb(22, 22, 22);
     width:80%;
     height: 700px;
 
+    /* Styling for the image inside the modal content */
     img {
         width:75%;
         min-height: 100%;
-        object-fit: cover;
         border-radius: 12px 0px 0px 12px;
+
+        /* Make the image cover its container while maintaining its aspect ratio */
+        object-fit: cover;
     }
 
+    /* Styling for the written content section of the modal */
     .popupDescription {
         display: flex;
         flex-direction: column;
         width: 100%;
     }
 
+    /* Pushes the exit button to the right */
     .header {
         display: flex;
         justify-content: space-between;
@@ -114,6 +146,7 @@ h2 {
         font-size: 24px
     }
 
+    /* Styling for the exit button inside the modal  */
     button {
         background: none;
         color: white;

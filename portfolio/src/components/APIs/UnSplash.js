@@ -20,7 +20,7 @@ export function useUnSplashImage (searchValue) {
     async function getUnSplashImage(searchValue) {
 
         // The URL for the Unsplash API
-        const url = `ttps://api.unsplash.com/photos/random?client_id=${API_KEY}&query=${searchValue}&count=1`;
+        const url = `https://api.unsplash.com/photos/random?client_id=${API_KEY}&query=${searchValue}&count=1`;
 
         try {
             // Fetch the data from the Unsplash API

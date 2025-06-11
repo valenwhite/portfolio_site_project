@@ -1,39 +1,82 @@
-# Portfolio
+# Developer Portfolio Site
 
-This is my personal portfolio project. It showcases my skills, projects, and experiences as a software developer.
+<img width="1622" alt="cover" src="https://github.com/user-attachments/assets/9a053579-7c0c-4f2d-8c75-7c29823ce85b" />
 
-## Installation
 
-To install and run this project locally, follow these steps:
+This is my personal developer portfolio, built using **React**. It showcases my work, skills, and experience as a software developer. The site dynamically fetches data from my GitHub profile and incorporates various APIs to enhance the user experience.
 
-1. Clone the repository: `git clone https://github.com/yourusername/portfolio.git`
-2. Navigate to the project directory: `cd portfolio`
-3. Install the dependencies: `npm install`
-4. Start the project: `npm start`
+---
 
-## Features
+## ⚙️ Features
 
-- **About Me**: A section about myself, my skills, and my experiences.
-- **Projects**: A showcase of my projects with links to the live sites and the source code.
-- **Contact**: A form to reach out to me.
+- **About Me**: A brief overview of my background, skills, and tools I work with.
+- **Projects Section**: Automatically pulls in my GitHub repositories and builds project cards dynamically.
+- **Contact Page**: A working form for direct communication.
+- **Responsive Design**: Mobile-friendly layout built with custom CSS.
+- **API Integrations**:
+  - GitHub REST API – for repository data
+  - Unsplash API – for high-quality background images
+  - Google Geocode API & TimeZoneDB – for UX enhancements
 
-The portofolio uses your Github useranme to both dispaly the sidebar correctly and produce the porfolio items. If you were to use this for yourself you'd need to alter the username variable found in the profile component (portfolo -> components -> Profile -> Profile.js). you'll also need to update the resume page as that has been hard coded for now.
+---
 
-## Technologies Used
+## 🛠️ Tech Stack
 
-- React.js
-- CSS
-- Unsplash API
+- **React.js**
+- **CSS Modules**
+- **GitHub API**
+- **Unsplash API**
+- **Google Timezone API**
+- **Google Geocoding API**
 
-## Future Improvements
+---
 
-- Add more projects as I create them.
-- Implement a blog section to share my thoughts on software development.
+## 📁 Folder Structure
 
-## License
+```plaintext
+portfolio/
+  public/
+  src/
+    components/
+      About/
+      APIs/
+      Contact/
+      Footer/
+      Functional/
+      Home/
+      Profile/
+      Projects/
+      Resume/
+      SideBar/
+  index.js
+  App.js
+```
 
-This project is licensed under the MIT License.
+---
+## 🚀 Getting Started
 
-## Contact
+To run this project locally:
 
-If you want to contact me, you can reach me at `your-email@example.com`.
+```bash
+git clone https://github.com/valenwhite/portfolio_site_project.git
+cd portfolio
+npm install
+npm start
+```
+
+---
+
+## ⚠️ Configuration
+
+If you wish to reuse this portfolio:
+
+- Go to `portfolio/src/components/Profile/Profile.js`
+  - Update the `username` constant to match your GitHub username
+- Go to `portfolio/src/components/Resume/Resume.js`
+  - Replace hardcoded content with your own experience
+
+---
+
+## 🪪 License
+
+This project is open-source and available under the [MIT License](LICENSE.md).

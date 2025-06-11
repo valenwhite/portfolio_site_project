@@ -32,7 +32,7 @@ export function useGoogleGeocoding (location) {
                     setCoordinates(data.results[0].geometry.location);
                 }
 
-                // Set the loading state variable to false
+                // Set the loading state variable to false 
                 setLoading(false);
 
             } catch (error) {

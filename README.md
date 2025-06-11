@@ -3,7 +3,9 @@
 <img width="1622" alt="cover" src="https://github.com/user-attachments/assets/9a053579-7c0c-4f2d-8c75-7c29823ce85b" />
 
 
-This is my personal developer portfolio, built using **React**. It showcases my work, skills, and experience as a software developer. The site dynamically fetches data from my GitHub profile and incorporates various APIs to enhance the user experience.
+This is my personal developer portfolio, built using **React** for IFN666 at QUT (Web and Mobile Application Development). It showcases my work, skills, and experience as a software developer. The site dynamically fetches data from my GitHub profile and incorporates various APIs to enhance the user experience.
+
+Note, this is not currently deployed. 
 
 ---
 

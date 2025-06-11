@@ -2,7 +2,7 @@
 import { useEffect, useState } from 'react';
 
 // Define the Unsplash API key (removed wehn correctly depoyed)
-const API_KEY = 'mKJpkBLe1kDR6YveYQ-pXLe0t6BR1eR3Soekzf5PZAg';
+const API_KEY = 'REDACTED'
 
 // API that fetches an image from Unsplash based on a search value. The vlaue is the GitHub User Location
 export function useUnSplashImage (searchValue) {
